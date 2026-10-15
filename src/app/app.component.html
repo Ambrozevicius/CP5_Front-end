@@ -1,0 +1,254 @@
+﻿<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<div class="loader" aria-hidden="true">
+  <span class="mono">PORTFOLIO / {{ data.year }}</span>
+  <div class="loader-line"></div>
+</div>
+<header class="header flex items-center justify-between">
+  <a href="#intro" class="brand" aria-label="Back to introduction"
+    >{{ data.initials }}<span class="brand-dot" aria-hidden="true">.</span></a
+  >
+  <nav aria-label="Main navigation" class="flex items-center">
+    <a href="#profile">PROFILE</a><a href="#work">WORK</a
+    ><a href="#expertise">EXPERTISE</a><a href="#experience">EXPERIENCE</a
+    ><a href="#contact">CONTACT <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+  <section id="intro" class="hero" aria-labelledby="name">
+    <div class="hero-meta mono flex justify-between gap-4">
+      <span>INDEPENDENT PORTFOLIO — {{ data.year }}</span
+      ><span class="hero-location"
+        >{{ data.location }}<br />{{ data.role }}</span
+      ><span class="edition">VOL. 001<br />DIGITAL EDITION</span>
+    </div>
+    <h1 id="name" [attr.aria-label]="data.displayName">
+      <span class="name-line"
+        ><span>{{ data.firstName }}<span class="name-dot">.</span></span></span
+      ><span class="name-line second"
+        ><span>{{ data.lastName }}</span></span
+      >
+    </h1>
+    <div class="hero-symbol hero-secondary" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="hero-side mono hero-secondary">
+      <span class="small-square"></span> {{ data.heroSignature[0] }}<br />{{
+        data.heroSignature[1]
+      }}
+    </div>
+    <div class="hero-bottom hero-secondary">
+      <a href="#work" class="mono text-link"
+        >EXPLORE THE WORK <span aria-hidden="true">↘</span></a
+      >
+      <p>{{ data.intro }}</p>
+      <span class="mono scroll-cue"
+        >SCROLL TO DISCOVER <span aria-hidden="true">↓</span></span
+      >
+    </div>
+    <div class="hero-foot mono">
+      <span>{{ data.edition }}</span
+      ><span>01 — 07</span>
+    </div>
+  </section>
+  <section class="statement" aria-label="Approach">
+    <div class="statement-top mono">
+      <span>A WAY OF THINKING</span><span>[ SYSTEMS + PEOPLE ]</span>
+    </div>
+    <p>
+      <span class="statement-line">{{ data.statement[0] }}</span
+      ><span class="statement-line middle"
+        >{{ data.statement[1] }}
+        <span class="statement-cross" aria-hidden="true">✳</span></span
+      ><span class="statement-line accent">{{ data.statement[2] }}</span>
+    </p>
+    <span class="mono statement-bottom"
+      >UNDERSTANDING BEFORE IMPLEMENTATION.</span
+    >
+  </section>
+  <section
+    id="profile"
+    class="profile section-pad"
+    aria-labelledby="profile-title"
+  >
+    <div class="section-label">
+      <span>02 / PROFILE</span><span>BEHIND THE PLATFORM</span>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-aside">
+        <span class="mono accent"
+          >[ {{ data.initials }} / {{ data.year }} ]</span
+        >
+        <div class="profile-mark" aria-hidden="true">↗</div>
+        <span class="mono">{{ data.location }}</span>
+      </div>
+      <div>
+        <h2 id="profile-title" class="reveal">{{ data.profile }}</h2>
+        <div class="profile-copy">
+          <p>{{ data.bio }}</p>
+          <p class="profile-note">{{ data.profileNote }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-selected-work />
+  <section
+    id="expertise"
+    class="expertise section-pad"
+    aria-labelledby="expertise-title"
+  >
+    <div class="section-label">
+      <span>04 / EXPERTISE</span><span>TECHNICAL INDEX</span>
+    </div>
+    <div class="expertise-intro">
+      <h2 id="expertise-title" class="reveal">
+        {{ data.expertiseTitle[0] }}<br /><span class="muted">{{
+          data.expertiseTitle[1]
+        }}</span>
+      </h2>
+      <p class="mono muted">
+        PRIMARY PLATFORM<br /><span class="platform-name">{{
+          data.platform
+        }}</span>
+      </p>
+    </div>
+    <div class="expertise-grid">
+      @for (area of data.expertise; track area.label) {
+        <article>
+          <span class="mono accent">{{ area.label }}</span>
+          <h3>{{ area.title }}</h3>
+          <ul>
+            @for (item of area.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </section>
+  <section
+    id="experience"
+    class="experience section-pad"
+    aria-labelledby="experience-title"
+  >
+    <div class="section-label">
+      <span>05 / EXPERIENCE</span><span>PROFESSIONAL PRACTICE</span>
+    </div>
+    <h2 id="experience-title" class="reveal">
+      {{ data.experienceTitle[0] }}<br />{{ data.experienceTitle[1] }}
+    </h2>
+    @for (job of data.experience; track job.company) {
+      <article class="experience-row">
+        <span class="mono muted">{{ job.period }}</span>
+        <div>
+          <h3>{{ job.company }}</h3>
+          <span class="mono accent">{{ job.role }}</span
+          ><span class="experience-location mono">{{ job.location }}</span>
+          <p>{{ job.description }}</p>
+          <p>{{ job.detail }}</p>
+        </div>
+        <span aria-hidden="true" class="experience-plus">+</span>
+      </article>
+    }
+  </section>
+  <section class="additional section-pad" aria-labelledby="additional-title">
+    <div class="section-label">
+      <h2 id="additional-title">06 / EDUCATION & CREDENTIALS</h2>
+      <span>CONTINUOUS LEARNING</span>
+    </div>
+    <div class="credentials-layout">
+      <div class="education-column">
+        <h3 class="mono muted">EDUCATION</h3>
+        @for (item of data.education; track item.title) {
+          <article class="education-item">
+            <span class="mono accent"
+              >{{ item.institution }} / {{ item.period }}</span
+            >
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.note }}</p>
+          </article>
+        }
+        <div class="pursuing">
+          <h3 class="mono muted">CURRENTLY PURSUING</h3>
+          <ul>
+            @for (item of data.pursuing; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+          <p class="mono muted">IN PROGRESS / NOT YET CERTIFIED</p>
+        </div>
+      </div>
+      <div class="certification-column">
+        <h3 class="mono muted">
+          CERTIFICATIONS
+          <span class="credential-count"
+            >[
+            {{ data.certifications.length.toString().padStart(2, "0") }} ]</span
+          >
+        </h3>
+        <ol class="certification-list">
+          @for (credential of data.certifications; track credential.code) {
+            <li>
+              <span class="credential-code mono">{{ credential.code }}</span>
+              <div>
+                <h4>{{ credential.title }}</h4>
+                <span class="mono muted">{{ credential.issuer }}</span>
+              </div>
+              <span class="mono muted credential-year">{{
+                credential.year
+              }}</span>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section
+    id="contact"
+    class="contact section-pad"
+    aria-labelledby="contact-title"
+  >
+    <div class="section-label">
+      <span>07 / CONTACT</span><span>THE NEXT CHAPTER</span>
+    </div>
+    <p class="contact-note">{{ data.contactNote }}</p>
+    <h2 id="contact-title" class="reveal">
+      {{ data.contactTitle[0] }}<br /><span>{{ data.contactTitle[1] }}</span
+      ><span class="contact-arrow" aria-hidden="true">↗</span>
+    </h2>
+    <div class="opportunity-line">
+      <span class="mono"
+        ><span class="small-square"></span>{{ data.opportunities }}</span
+      ><span class="mono muted">{{ data.location }}</span>
+    </div>
+    <ul class="opportunity-roles mono">
+      @for (role of data.opportunityRoles; track role) {
+        <li>{{ role }}</li>
+      }
+    </ul>
+    <div class="contact-links">
+      @for (contact of data.contacts; track contact.label) {
+        <div>
+          <span class="mono muted">{{ contact.label }}</span>
+          @if (contact.url) {
+            <a
+              [href]="contact.url"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ contact.value }} ↗</a
+            >
+          } @else {
+            <span class="contact-placeholder">{{ contact.value }}</span>
+          }
+        </div>
+      }
+    </div>
+  </section>
+</main>
+<footer class="footer mono">
+  <a href="#intro" class="brand" aria-label="Back to introduction"
+    >{{ data.initials }}<span class="brand-dot" aria-hidden="true">.</span></a
+  ><span>© {{ data.year }} {{ data.displayName }}</span
+  ><a href="#intro" class="text-link">BACK TO TOP ↑</a>
+</footer>
