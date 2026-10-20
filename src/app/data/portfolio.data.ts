@@ -1,4 +1,4 @@
-﻿// Professional content supplied in dados.md. Client names and private assets are omitted.
+// Professional content supplied in dados.md. Client names and private assets are omitted.
 export const portfolio = {
   year: "2026",
   initials: "IA",
@@ -267,21 +267,28 @@ export const portfolio = {
   contactTitle: ["LET’S", "TALK."],
   contactNote:
     "ServiceNow development. Technical questions. New opportunities.",
-  // TODO: add real contact URLs and put the actual CV in public/assets/.
-  // Keep null until supplied to avoid invented addresses and broken downloads.
+  
   resumePath: "/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
   contacts: [
-    { label: "EMAIL", value: "Email coming soon", url: null as string | null },
+    {
+      label: "EMAIL",
+      value: "ipambrozevicius@gmail.com",
+      url: "mailto:ipambrozevicius@gmail.com",
+    },
     {
       label: "LINKEDIN",
-      value: "Profile coming soon",
-      url: null as string | null,
+      value: "linkedin.com/in/isaac-ambrozevicius",
+      url: "https://www.linkedin.com/in/isaac-ambrozevicius/",
     },
     {
       label: "GITHUB",
-      value: "Profile coming soon",
-      url: null as string | null,
+      value: "github.com/Ambrozevicius",
+      url: "https://github.com/Ambrozevicius",
     },
-    { label: "RESUME", value: "PDF coming soon", url: null as string | null },
+    {
+      label: "RESUME",
+      value: "Download CV (PDF)",
+      url: "/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
+    },
   ],
 };
