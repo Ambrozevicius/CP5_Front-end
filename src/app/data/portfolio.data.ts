@@ -287,7 +287,7 @@ export const portfolio = {
     {
       label: "RESUME",
       value: "Download CV (PDF)",
-      url: "/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
+      url: "/public/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
     },
   ],
 };
