@@ -1,4 +1,3 @@
-// Professional content supplied in dados.md. Client names and private assets are omitted.
 export const portfolio = {
   year: "2026",
   initials: "IA",
@@ -268,7 +267,7 @@ export const portfolio = {
   contactNote:
     "ServiceNow development. Technical questions. New opportunities.",
   
-  resumePath: "/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
+  resumePath: "/public/assets/ISAAC-AMBROZEVICIUS_CV.pdf",
   contacts: [
     {
       label: "EMAIL",
